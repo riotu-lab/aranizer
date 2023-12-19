@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: aranizer
+Version: 0.1
+Summary: Aranizer:A Custom Tokenizer for Enhanced Arabic Language Processing
+Home-page: https://github.com/omarnj-lab/aranizer
+Author: omar najar
+Author-email: onajar@psu.edu.sa
+License: MIT
+License-File: LICENSE
