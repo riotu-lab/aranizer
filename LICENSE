@@ -25,7 +25,7 @@ The name of the Owners may not be used in advertising or publicity pertaining to
 The use of Aranizer should be cited as follows:
 @misc{AraNizer_2023,
   title={Aranizer: A Custom Tokenizer for Enhanced Arabic Language Processing},
-  author={Najar, Omar and Sibaee, Serry and Ghouti, Lahouari and Kouba, Anis},
+  author={Necer, Omer and Sibaee, Serry and Ghouti, Lahouari and Kouba, Anis},
   affiliation={Prince Sultan University, Riyadh, Saudi Arabia},
   year={2023},
   howpublished={\url{https://github.com/riotu-lab/aranizer}
