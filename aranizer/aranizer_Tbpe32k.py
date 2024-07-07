@@ -13,7 +13,7 @@ def get_tokenizer():
                                  include Arabic diacritics.
     """
     # Initialize the tokenizer
-    tokenizer_fast = PreTrainedTokenizerFast(tokenizer_file="aranizer/BPE_Moshakal_Tokenizer/TBPE_tokenizer_32.0K.json")
+    tokenizer_fast = PreTrainedTokenizerFast(tokenizer_file="BPE_Moshakal_Tokenizer/TBPE_tokenizer_32.0K.json")
 
 
     return tokenizer_fast 
