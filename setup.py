@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='aranizer',
-    version='0.1.9',
+    version='0.2.0',
     author='RIOTU Lab',
     author_email='riotu@psu.edu.sa',
     description='Aranizer: A Custom Tokenizer for Enhanced Arabic Language Processing',
