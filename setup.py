@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='aranizer',
-    version='0.2.0',
+    version='0.2.2',
     author='RIOTU Lab',
     author_email='riotu@psu.edu.sa',
     description='Aranizer: A Custom Tokenizer for Enhanced Arabic Language Processing',
@@ -35,6 +35,12 @@ setup(
     ],
     license='Apache 2.0',
     include_package_data=True,
+    package_data={
+        'aranizer': [
+            'tokenizers/bpe/*.json',
+            'tokenizers/sp/*.model',
+        ],
+    },
     # Optional: if your package offers a CLI
     # entry_points={
     #     'console_scripts': [
@@ -42,5 +48,3 @@ setup(
     #     ],
     # },
 )
-
-
