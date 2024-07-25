@@ -13,7 +13,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/riotu-lab/aranizer',
-    packages=find_packages(),
+    packages=find_packages(),  # Ensure this line is correct
     install_requires=[
         'transformers>=4.0.0',
         'sentence-transformers>=0.4.0'
@@ -41,10 +41,4 @@ setup(
             'tokenizers/sp/*.model',
         ],
     },
-    # Optional: if your package offers a CLI
-    # entry_points={
-    #     'console_scripts': [
-    #         'aranizer-cli=aranizer.command_line:main',
-    #     ],
-    # },
 )
