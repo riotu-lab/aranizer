@@ -18,14 +18,17 @@ pip install aranizer
 ## Usage
 ### Importing Tokenizers
 Import your desired tokenizer from AraNizer. Available tokenizers include:
-- BEP variants: aranizer_bpe50k, aranizer_bpe64k,
-- SentencePiece variants: aranizer_bpe86k, aranizer_sp32k, aranizer_sp50k, aranizer_sp64k, aranizer_sp86k.
+BEP variants: get_bpe with keys bpe32, bpe50, bpe64, bpe86, bpe32T, bpe50T, bpe64T, bpe86T
+SentencePiece variants: get_sp with keys sp32, sp50, sp64, sp86, sp32T, sp50T, sp64T, sp86T
 
 ```python
-from aranizer import aranizer_sp32k  # Replace with your chosen tokenizer
+from aranizer import get_bpe, get_sp  # Import functions to retrieve tokenizers
 
-#Load your tokenizer:
-tokenizer = aranizer_sp32k.get_tokenizer()
+# Example for importing a BPE tokenizer
+bpe_tokenizer = get_bpe("bpe32")  # Replace with your chosen tokenizer key
+
+# Example for importing a SentencePiece tokenizer
+sp_tokenizer = get_sp("sp32")  # Replace with your chosen tokenizer key
 ```
 
 ### Tokenizing Text
@@ -33,8 +36,14 @@ Tokenize Arabic text using the selected tokenizer:
 
 ```python
 text = "مثال على النص العربي"  # Example Arabic text
-tokens = tokenizer.tokenize(text)
-print(tokens)
+
+# Using BPE tokenizer
+bpe_tokens = bpe_tokenizer.tokenize(text)
+print(bpe_tokens)
+
+# Using SentencePiece tokenizer
+sp_tokens = sp_tokenizer.tokenize(text)
+print(sp_tokens)
 ```
 
 ### Encoding and Decoding
@@ -44,27 +53,47 @@ Encode text into token ids and decode back to text.
 **Encoding:** To encode text, use the encode method. 
 ```python
 text = "مثال على النص العربي"  # Example Arabic text
-encoded_output = tokenizer.encode(text, add_special_tokens=True)
-print(encoded_output)
+
+# Using BPE tokenizer
+encoded_bpe_output = bpe_tokenizer.encode(text, add_special_tokens=True)
+print(encoded_bpe_output)
+
+# Using SentencePiece tokenizer
+encoded_sp_output = sp_tokenizer.encode(text, add_special_tokens=True)
+print(encoded_sp_output)
 ```
 
 **Decoding:** To convert token ids back to text, use the decode method:
 ```python
-decoded_text = tokenizer.decode(encoded_output)
-print(decoded_text)
+# Using BPE tokenizer
+decoded_bpe_text = bpe_tokenizer.decode(encoded_bpe_output)
+print(decoded_bpe_text)
+
+# Using SentencePiece tokenizer
+decoded_sp_text = sp_tokenizer.decode(encoded_sp_output)
+print(decoded_sp_text)
 ```
 
 ## Available Tokenizers
 
 ```bash
-- aranizer_bpe32k: Based on BEP Tokenizer with Vocab Size of 32k
-- aranizer_bpe50k: Based on BEP Tokenizer with Vocab Size of 50k
-- aranizer_bpe64k: Based on BEP Tokenizer with Vocab Size of 64k
-- aranizer_bpe86k: Based on BEP Tokenizer with Vocab Size of 86k
-- aranizer_sp32k: Based on Sentence Peice Tokenizer with Vocab Size of 32k
-- aranizer_sp50k: Based on Sentence Peice Tokenizer with Vocab Size of 50k
-- aranizer_sp64k: Based on Sentence Peice Tokenizer with Vocab Size of 64k
-- aranizer_sp86k: Based on Sentence Peice Tokenizer with Vocab Size of 86k
+Available Tokenizers
+get_bpe("bpe32"): Based on BPE Tokenizer with Vocab Size of 32k
+get_bpe("bpe50"): Based on BPE Tokenizer with Vocab Size of 50k
+get_bpe("bpe64"): Based on BPE Tokenizer with Vocab Size of 64k
+get_bpe("bpe86"): Based on BPE Tokenizer with Vocab Size of 86k
+get_bpe("bpe32T"): Based on BPE Tokenizer with Vocab Size of 32k (with Tashkeel (diacritics))
+get_bpe("bpe50T"): Based on BPE Tokenizer with Vocab Size of 50k (with Tashkeel (diacritics))
+get_bpe("bpe64T"): Based on BPE Tokenizer with Vocab Size of 64k (with Tashkeel (diacritics))
+get_bpe("bpe86T"): Based on BPE Tokenizer with Vocab Size of 86k (with Tashkeel (diacritics))
+get_sp("sp32"): Based on SentencePiece Tokenizer with Vocab Size of 32k
+get_sp("sp50"): Based on SentencePiece Tokenizer with Vocab Size of 50k
+get_sp("sp64"): Based on SentencePiece Tokenizer with Vocab Size of 64k
+get_sp("sp86"): Based on SentencePiece Tokenizer with Vocab Size of 86k
+get_sp("sp32T"): Based on SentencePiece Tokenizer with Vocab Size of 32k (with Tashkeel (diacritics))
+get_sp("sp50T"): Based on SentencePiece Tokenizer with Vocab Size of 50k (with Tashkeel (diacritics))
+get_sp("sp64T"): Based on SentencePiece Tokenizer with Vocab Size of 64k (with Tashkeel (diacritics))
+get_sp("sp86T"): Based on SentencePiece Tokenizer with Vocab Size of 86k (with Tashkeel (diacritics))
 ```
 
 ## System Requirements
@@ -84,7 +113,7 @@ This work is maintained by the Robotics and Internet-of-Things Lab at Prince Sul
 - Eng. Serry Sebai (NLP Research Engineer)
 
 ## Version:
-0.1.8
+0.2.3
 
 ## Citations:
 Coming soon
