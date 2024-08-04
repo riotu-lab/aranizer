@@ -28,5 +28,5 @@ def get_bpe(name):
 
 def get_sp(name):
     tokenizer_path = pkg_resources.resource_filename(__name__, dc[name])
-    tokenizer_fast = PreTrainedTokenizerFast(sp_model_file=tokenizer_path)
+    tokenizer_fast = PreTrainedTokenizerFast(tokenizer_file=tokenizer_path)
     return tokenizer_fast

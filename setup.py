@@ -38,7 +38,7 @@ setup(
     package_data={
         'aranizer': [
             'tokenizers/bpe/*.json',
-            'tokenizers/sp/*.model',
+            'tokenizers/sp/*.json',
         ],
     },
 )
